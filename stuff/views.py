@@ -4,11 +4,18 @@ from rest_framework.response import Response
 from .models import Category, Stuff, UserStuff
 from .serializer import CategorySerializer, StuffSerializer, UserStuffSerializer
 from user.models import User
+from django.contrib.auth.models import User
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+    @action(detail=True)
+    def stuffs(self, request, *ars, **kwargs):
+        category = self.get_object()
+        serializer = StuffSerializer(category.stuffs.all(), many=True)
+        return Response(serializer.data)
 
 class StuffViewSet(viewsets.ModelViewSet):
     queryset = Stuff.objects.all()

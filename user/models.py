@@ -1,5 +1,5 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-class User(models.Model):
-    name = models.CharField(max_length=100)
-    point = models.IntegerField()
+class User(AbstractUser):
+    point = models.IntegerField(default=0)
