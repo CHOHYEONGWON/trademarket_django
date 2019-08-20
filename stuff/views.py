@@ -43,7 +43,7 @@ class StuffViewSet(viewsets.ModelViewSet):
         serializer = UserStuffSerializer(user.stuffs.all(), many=True)
         return Response(serializer.data)
 
-    @action(detail=False, method=['POST'], url_path='purchase')
+    @action(detail=False, methods=['POST'], url_path='purchase')
     @transaction.atomic()
     def purchase_stuffs(self, request, *args, **kwargs):
         user = request.user
