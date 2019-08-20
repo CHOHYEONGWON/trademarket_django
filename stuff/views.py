@@ -51,7 +51,7 @@ class StuffViewSet(viewsets.ModelViewSet):
 
         sid = transaction.savepoint()
         for i in stuffs:
-            stuff = stuff.objects.get(id=i['item_id'])
+            stuff = Stuff.objects.get(id=i['stuff_id'])
             count = int(i['count'])
 
             if stuff.price * count > user.point:
