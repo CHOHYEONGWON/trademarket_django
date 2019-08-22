@@ -7,3 +7,7 @@ def image_view(request, file_name):
     image_data = open('uploads/stuff_image/' + file_name, 'rb').read()
     ext = file_name.split('.')[1]
     return HttpResponse(image_data, content_type='image/' + ext)
+
+@api_view(['GET'])
+def root_view(request):
+    return  HttpResponse('trademarket_django_api')

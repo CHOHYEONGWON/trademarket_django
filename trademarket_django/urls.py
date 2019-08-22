@@ -24,4 +24,5 @@ urlpatterns = [
     path('media/uploads/stuff_image/<str:file_name>', views.image_view),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('me/', include('user.urls.me_urls')),
+    path('', views.root_view),
 ]
