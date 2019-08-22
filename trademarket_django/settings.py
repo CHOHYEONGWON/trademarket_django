@@ -26,7 +26,7 @@ SECRET_KEY = 'kpx6u$@6q$#eeet8170v(1s9v-1z!&l^wdhfh$tftk=&2*numg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'user.User'
 
 # Application definition
