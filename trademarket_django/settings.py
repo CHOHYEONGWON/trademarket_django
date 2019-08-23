@@ -131,9 +131,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+AWS_ACCESS_KEY_ID = 'ASIAWOXSBMPQY3I5KW4M'
+AWS_SECRET_ACCESS_KEY = 'KhvTyZLfRVus03HuCvr3XBrtFDiE+5245zI/u3iZ'
+AWS_SESSION_TOKEN = 'FQoGZXIvYXdzEFoaDEDRd3etAwYRT1lwgCKBAtGXvzRxd0JtQ4ZSImAPM1h4CtFupsbUeXnrCIQswpQwnKTGlwV7He7YLfyac0BM+/TJUFsNKNIdnFXi9u2QlcLc/9BP3TG7+BWfddoqwtuDBva6PMNOh2/eZVbNpEKr8VI5rsH2vygo+NEgCiVAQ82KJ+rUxMF29HIG6Z0iHGNgVQHuyZMV8tyf8w1gwP7glfNIq7FBUdEXfPQuW3iXkUWalSc4MwXHLFDdXuvSpBPj6G5jDUb4lsJjJbspr+eUKNm2RDIMhsgXjLSg/SLK8fQPH4D9Ye++JYYAsYtupi+4megi0Fl+YQYhXDrJjsUqXd8vkO+rA7NXbr7Xn1KmhPoTKObi/OoF'
+
+AWS_STORAGE_BUCKET_NAME = 'cdn.trademarket'
+AWS_S3_CUSTOM_DOMAIN = 'd1j5f7lvpy2uwt.cloudfront.net'
+AWS_S3_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/media/'
-MEDIA_URL = '/media/'
+STATIC_ROOT = 'static/'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# MEDIA_ROOT = '/media/'
+# MEDIA_URL = '/media/'
+
+AWS_LOCATION = 'assets/'
+ASSET_URL = '%s%s' % (AWS_S3_URL, AWS_LOCATION)
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'trademarket_django.storages.FileStorage'
+
+
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 
