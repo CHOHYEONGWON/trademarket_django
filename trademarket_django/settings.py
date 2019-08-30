@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'trademarket_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'trademarket',
-        'USER':'root',
+        'NAME': 'tm',
+        'USER': 'root',
         'PASSWORD': 'ekdhf1221!',
-        'HOST': 'trademarket.c8yqzix4ytsf.us-east-1.rds.amazonaws.com',
+        'HOST': 'trade-market.cygxmpbbhqgy.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
@@ -131,11 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-AWS_ACCESS_KEY_ID = 'ASIAWOXSBMPQ5VJMB257'
-AWS_SECRET_ACCESS_KEY = 'cXqhgyBwAPDinJoQLDbauPKP2gLDVcd5VjkGE5Yn'
-AWS_SESSION_TOKEN = 'FQoGZXIvYXdzEF4aDMrwFPHa+I8ONoVVVyKBArmsrp+vlp0YwEg6CKBXYE/o+7PUZueHTrpw1axv37MJ6awJCcQ8ocSQL7mHtKkjYpANQX9gH/nqwKgw6EEPNwt2qdq9lhDK1n67b/Xb+U+qaZVrb3jdvu+u3cdAGD4adCWboGzOQEZOt1OPWxQZi9Ku+t0djJIkoMLVbs2z0zJJZ/p23BYbGod0UrijXL8epQClNxhyP6+TagR6Mna5q6+nbOMSF9GeFKhvpAq4pDDJNiIO4LcGNu2GMarD5MtoYgHq33mdS/Zp+qE6Mi0w67ZVB3qcyA2l1r06wNFguMegHRvhFSZrGMCxpAiN6BJAwhE2aEMSvvT1QADIe7/grgBAKNDc/eoF'
-AWS_STORAGE_BUCKET_NAME = 'cdn.trademarket'
-AWS_S3_CUSTOM_DOMAIN = 'd1j5f7lvpy2uwt.cloudfront.net'
+AWS_STORAGE_BUCKET_NAME = 'cdn.market.abc1'
+AWS_S3_CUSTOM_DOMAIN = 'd3njpax00eeih9.cloudfront.net'
 AWS_S3_URL = 'https://%s/' % AWS_S3_CUSTOM_DOMAIN
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
@@ -149,7 +146,7 @@ STATICFILES_STORAGE = 'trademarket_django.storages.StaticStorage'
 AWS_LOCATION = 'assets/'
 ASSET_URL = '%s%s' % (AWS_S3_URL, AWS_LOCATION)
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'trademarket_django.storages.FileStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.s3Boto3Storage'
 
 
 
@@ -166,3 +163,4 @@ REST_FRAMEWORK = {
 OAUTH2_PROVIDER = {
     'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore',
 }
+
